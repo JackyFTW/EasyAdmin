@@ -238,8 +238,14 @@ function generateTextures()
 			dui = nil
 		end
 		txd = CreateRuntimeTxd("easyadmin")
-		CreateRuntimeTextureFromImage(txd, 'badge_dev', 'dependencies/images/pl_badge_dev.png')
-		CreateRuntimeTextureFromImage(txd, 'badge_contrib', 'dependencies/images/pl_badge_contr.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_owner', 'dependencies/images/pl_badge_owner.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_management', 'dependencies/images/pl_badge_management.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_ha', 'dependencies/images/pl_badge_ha.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_sa', 'dependencies/images/pl_badge_sa.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_admin', 'dependencies/images/pl_badge_admin.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_smod', 'dependencies/images/pl_badge_smod.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_mod', 'dependencies/images/pl_badge_mod.png')
+		CreateRuntimeTextureFromImage(txd, 'badge_tmod', 'dependencies/images/pl_badge_tmod.png')
 
 		if ((overrideEgg == nil) and easterChance == 100) or (overrideEgg or overrideEgg == false) then
 			local chance = overrideEgg
@@ -465,11 +471,22 @@ function GenerateMenu() -- this is a big ass function
 				}
 			end
 			local thisPlayerMenu = _menuPool:AddSubMenu(playermanagement,"["..thePlayer.id.."] "..thePlayer.name,"",true)
-			if not RedM and thePlayer.developer then
+			if not RedM and thePlayer.owner then
 				thisPlayerMenu.ParentItem:SetRightBadge(23)
-			elseif not RedM and thePlayer.contributor then 
+			elseif not RedM and thePlayer.management then 
 				thisPlayerMenu.ParentItem:SetRightBadge(24)
-			end
+			elseif not RedM and thePlayer.ha then 
+				thisPlayerMenu.ParentItem:SetRightBadge(25)
+			elseif not RedM and thePlayer.sa then 
+				thisPlayerMenu.ParentItem:SetRightBadge(26)
+			elseif not RedM and thePlayer.admin then 
+				thisPlayerMenu.ParentItem:SetRightBadge(27)
+			elseif not RedM and thePlayer.smod then 
+				thisPlayerMenu.ParentItem:SetRightBadge(28)
+			elseif not RedM and thePlayer.mod then 
+				thisPlayerMenu.ParentItem:SetRightBadge(29)
+			elseif not RedM and thePlayer.tmod then 
+				thisPlayerMenu.ParentItem:SetRightBadge(30)
 			playerMenus[tostring(thePlayer.id)] = {menu = thisPlayerMenu, name = thePlayer.name, id = thePlayer.id }
 
 			thisPlayerMenu:SetMenuWidthOffset(menuWidth)

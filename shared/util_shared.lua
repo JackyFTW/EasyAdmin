@@ -32,6 +32,15 @@ permissions = {
 	
 	["immune"] = false,
 	["anon"] = false,
+
+	["badge.owner"] = false,
+	["badge.management"] = false,
+	["badge.ha"] = false,
+	["badge.sa"] = false,
+	["badge.admin"] = false,
+	["badge.smod"] = false,
+	["badge.mod"] = false,
+	["badge.tmod"] = false
 }
 
 

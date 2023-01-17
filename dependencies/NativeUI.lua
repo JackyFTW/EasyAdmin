@@ -94,8 +94,14 @@ BadgeTexture = {
     [20] = function(Selected) if Selected then return "shop_trevor_icon_b" else return "shop_trevor_icon_a" end end,
     [21] = function() return "shop_lock" end,
     [22] = function() return "shop_tick_icon" end,
-    [23] = function() return "badge_dev" end,
-    [24] = function() return "badge_contrib" end,
+    [23] = function() return "badge_owner" end,
+    [24] = function() return "badge_management" end,
+    [25] = function() return "badge_ha" end,
+    [26] = function() return "badge_sa" end,
+    [27] = function() return "badge_admin" end,
+    [28] = function() return "badge_smod" end,
+    [29] = function() return "badge_mod" end,
+    [30] = function() return "badge_tmod" end
 }
 
 BadgeDictionary = {
@@ -112,6 +118,24 @@ BadgeDictionary = {
     [24] = function(Selected)
         return "easyadmin"
     end,
+    [25] = function(Selected)
+        return "easyadmin"
+    end,
+    [26] = function(Selected)
+        return "easyadmin"
+    end,
+    [27] = function(Selected)
+        return "easyadmin"
+    end,
+    [28] = function(Selected)
+        return "easyadmin"
+    end,
+    [29] = function(Selected)
+        return "easyadmin"
+    end,
+    [30] = function(Selected)
+        return "easyadmin"
+    end
 }
 
 BadgeColour = {
@@ -119,7 +143,13 @@ BadgeColour = {
     [21] = function(Selected) if Selected then return 0, 0, 0, 255 else return 255, 255, 255, 255 end end,
     [22] = function(Selected) if Selected then return 0, 0, 0, 255 else return 255, 255, 255, 255   end end,
     [23] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [24] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end
+    [24] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [25] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [26] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [27] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [28] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [29] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    [30] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end
 }
 
 Colours = {

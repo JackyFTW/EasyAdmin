@@ -119,7 +119,7 @@ AddEventHandler('playerDropped', function (reason)
 	if MutedPlayers[source] then
 		MutedPlayers[source] = nil
 		for i,_ in pairs(OnlineAdmins) do 
-			TriggerLatentClientEvent("EasyAdmin:SetPlayerMuted", i, 1000, source, nil)
+			TrggerLatentClientEvent("EasyAdmin:SetPlayerMuted", i, 1000, source, nil)
 		end
 	end
 	PrintDebugMessage(source.." disconnected.", 4)
@@ -139,10 +139,22 @@ RegisterServerEvent("EasyAdmin:GetInfinityPlayerList", function()
 				if (cached.id == player) then
 					local pData = {id = cached.id, name = cached.name, immune = cached.immune}
 					for i, v in pairs(cached.identifiers) do
-						if v == "discord:178889658128793600" then 
-							pData.developer = true
-						elseif v == "discord:736521574383091722" --[[ Jaccosf ]] or v == "discord:1001065851790839828" --[[ robbybaseplate ]] or v == "discord:840695262460641311" --[[ Knight ]] or v == "discord:270731163822325770" --[[ Skypo ]] or v == "discord:186980021850734592" --[[ coleminer0112 ]] then
-							pData.contributor = true
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.owner") then 
+							pData.owner = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.management") then
+							pData.management = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.ha") then
+							pData.ha = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.sa") then
+							pData.sa = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.admin") then
+							pData.admin = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.smod") then
+							pData.smod = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.mod") then
+							pData.mod = true
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.tmod") then
+							pData.tmod = true
 						end
 					end
 					table.insert(l, pData)
