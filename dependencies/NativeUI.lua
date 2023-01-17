@@ -143,13 +143,13 @@ BadgeColour = {
     [21] = function(Selected) if Selected then return 0, 0, 0, 255 else return 255, 255, 255, 255 end end,
     [22] = function(Selected) if Selected then return 0, 0, 0, 255 else return 255, 255, 255, 255   end end,
     [23] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [24] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [25] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [26] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [27] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [28] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [29] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
-    [30] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end
+    -- [24] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [25] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [26] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [27] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [28] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [29] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end,
+    -- [30] = function(Selected) if Selected then return 0,0,0, 255 else return 255,255,255,255 end end
 }
 
 Colours = {
