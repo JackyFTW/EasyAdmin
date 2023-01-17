@@ -238,8 +238,6 @@ function generateTextures()
 			dui = nil
 		end
 		txd = CreateRuntimeTxd("easyadmin")
-		CreateRuntimeTextureFromImage(txd, 'badge_owner', 'dependencies/images/pl_badge_owner.png')
-		CreateRuntimeTextureFromImage(txd, 'badge_management', 'dependencies/images/pl_badge_management.png')
 		CreateRuntimeTextureFromImage(txd, 'badge_ha', 'dependencies/images/pl_badge_ha.png')
 		CreateRuntimeTextureFromImage(txd, 'badge_sa', 'dependencies/images/pl_badge_sa.png')
 		CreateRuntimeTextureFromImage(txd, 'badge_admin', 'dependencies/images/pl_badge_admin.png')
@@ -471,22 +469,18 @@ function GenerateMenu() -- this is a big ass function
 				}
 			end
 			local thisPlayerMenu = _menuPool:AddSubMenu(playermanagement,"["..thePlayer.id.."] "..thePlayer.name,"",true)
-			if not RedM and thePlayer.owner then
+			if not RedM and not thePlayer.noBadge and thePlayer.ha then
 				thisPlayerMenu.ParentItem:SetRightBadge(23)
-			elseif not RedM and thePlayer.management then 
+			elseif not RedM and not thePlayer.noBadge and thePlayer.sa then
 				thisPlayerMenu.ParentItem:SetRightBadge(24)
-			elseif not RedM and thePlayer.ha then 
+			elseif not RedM and not thePlayer.noBadge and thePlayer.admin then
 				thisPlayerMenu.ParentItem:SetRightBadge(25)
-			elseif not RedM and thePlayer.sa then
+			elseif not RedM and not thePlayer.noBadge and thePlayer.smod then
 				thisPlayerMenu.ParentItem:SetRightBadge(26)
-			elseif not RedM and thePlayer.admin then 
+			elseif not RedM and not thePlayer.noBadge and thePlayer.mod then
 				thisPlayerMenu.ParentItem:SetRightBadge(27)
-			elseif not RedM and thePlayer.smod then 
+			elseif not RedM and not thePlayer.noBadge and thePlayer.tmod then
 				thisPlayerMenu.ParentItem:SetRightBadge(28)
-			elseif not RedM and thePlayer.mod then 
-				thisPlayerMenu.ParentItem:SetRightBadge(29)
-			elseif not RedM and thePlayer.tmod then 
-				thisPlayerMenu.ParentItem:SetRightBadge(30)
 			end
 			playerMenus[tostring(thePlayer.id)] = {menu = thisPlayerMenu, name = thePlayer.name, id = thePlayer.id }
 

@@ -139,32 +139,24 @@ RegisterServerEvent("EasyAdmin:GetInfinityPlayerList", function()
 			for i, cached in pairs(CachedPlayers) do
 				if (cached.id == player) then
 					local pData = {id = cached.id, name = cached.name, immune = cached.immune}
-					for i, v in pairs(cached.identifiers) do
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.owner") then 
-							pData.owner = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.management") then
-							pData.management = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.ha") then
-							pData.ha = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.sa") then
-							pData.sa = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.admin") then
-							pData.admin = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.smod") then
-							pData.smod = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.mod") then
-							pData.mod = true
-						end
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.tmod") then
-							pData.tmod = true
-						end
+
+					pData.noBadge = false
+					if DoesPlayerHavePermission(playerStr, "badge.owner") or DoesPlayerHavePermission(playerStr, "badge.management") then 
+						pData.noBadge = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.ha") then
+						pData.ha = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.sa") then
+						pData.sa = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.admin") then
+						pData.admin = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.smod") then
+						pData.smod = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.mod") then
+						pData.mod = true
+					elseif DoesPlayerHavePermission(playerStr, "badge.tmod") then
+						pData.tmod = true
 					end
+
 					table.insert(l, pData)
 				end
 			end
