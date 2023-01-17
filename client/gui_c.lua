@@ -487,6 +487,7 @@ function GenerateMenu() -- this is a big ass function
 				thisPlayerMenu.ParentItem:SetRightBadge(29)
 			elseif not RedM and thePlayer.tmod then 
 				thisPlayerMenu.ParentItem:SetRightBadge(30)
+			end
 			playerMenus[tostring(thePlayer.id)] = {menu = thisPlayerMenu, name = thePlayer.name, id = thePlayer.id }
 
 			thisPlayerMenu:SetMenuWidthOffset(menuWidth)
