@@ -142,19 +142,26 @@ RegisterServerEvent("EasyAdmin:GetInfinityPlayerList", function()
 					for i, v in pairs(cached.identifiers) do
 						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.owner") then 
 							pData.owner = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.management") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.management") then
 							pData.management = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.ha") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.ha") then
 							pData.ha = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.sa") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.sa") then
 							pData.sa = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.admin") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.admin") then
 							pData.admin = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.smod") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.smod") then
 							pData.smod = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.mod") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.mod") then
 							pData.mod = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.tmod") then
+						end
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.tmod") then
 							pData.tmod = true
 						end
 					end
