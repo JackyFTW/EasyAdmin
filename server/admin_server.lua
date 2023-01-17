@@ -133,27 +133,28 @@ RegisterServerEvent("EasyAdmin:GetInfinityPlayerList", function()
 		local players = GetPlayers()
 		
 		for i, player in pairs(players) do
+			local playerStr = player;
 			local player = tonumber(player)
 			cachePlayer(player)
 			for i, cached in pairs(CachedPlayers) do
 				if (cached.id == player) then
 					local pData = {id = cached.id, name = cached.name, immune = cached.immune}
 					for i, v in pairs(cached.identifiers) do
-						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.owner") then 
+						if v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.owner") then 
 							pData.owner = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.management") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.management") then
 							pData.management = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.ha") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.ha") then
 							pData.ha = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.sa") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.sa") then
 							pData.sa = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.admin") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.admin") then
 							pData.admin = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.smod") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.smod") then
 							pData.smod = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.mod") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.mod") then
 							pData.mod = true
-						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(source, "badge.tmod") then
+						elseif v ~= "discord:334018024283570187" and DoesPlayerHavePermission(playerStr, "badge.tmod") then
 							pData.tmod = true
 						end
 					end

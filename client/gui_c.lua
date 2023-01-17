@@ -477,7 +477,7 @@ function GenerateMenu() -- this is a big ass function
 				thisPlayerMenu.ParentItem:SetRightBadge(24)
 			elseif not RedM and thePlayer.ha then 
 				thisPlayerMenu.ParentItem:SetRightBadge(25)
-			elseif not RedM and thePlayer.sa then 
+			elseif not RedM and thePlayer.sa then
 				thisPlayerMenu.ParentItem:SetRightBadge(26)
 			elseif not RedM and thePlayer.admin then 
 				thisPlayerMenu.ParentItem:SetRightBadge(27)
