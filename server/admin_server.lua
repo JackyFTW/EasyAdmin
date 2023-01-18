@@ -119,7 +119,7 @@ AddEventHandler('playerDropped', function (reason)
 	if MutedPlayers[source] then
 		MutedPlayers[source] = nil
 		for i,_ in pairs(OnlineAdmins) do 
-			TrggerLatentClientEvent("EasyAdmin:SetPlayerMuted", i, 1000, source, nil)
+			TriggerLatentClientEvent("EasyAdmin:SetPlayerMuted", i, 1000, source, nil)
 		end
 	end
 	PrintDebugMessage(source.." disconnected.", 4)
